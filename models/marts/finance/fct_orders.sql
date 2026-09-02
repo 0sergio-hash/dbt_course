@@ -5,4 +5,4 @@ SELECT ORDERS.ORDER_ID
 FROM {{ ref('stg_jaffle_shop__orders') }}   AS ORDERS
 
 LEFT JOIN {{ ref('stg_stripe__payments') }} AS PAYMENTS
-    ON ORDERS.ORDER_ID = PAYMENTS.ORDERID
+    ON ORDERS.ORDER_ID = PAYMENTS.ORDER_ID

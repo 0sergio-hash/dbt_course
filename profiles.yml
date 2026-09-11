@@ -1,0 +1,20 @@
+default:
+  target: dev
+  outputs:
+    dev: 
+      type: snowflake
+      
+      # Connection identifiers (placeholder examples, see adapter-specific pages for supported configs)
+      account:  "{{ env_var('DBT_ENV_SECRET_ACCOUNT') }}"
+      user:     "{{ env_var('DBT_ENV_SECRET_USER') }}"
+      
+      database: "{{ env_var('DBT_DATABASE') }}"
+      schema:   "{{ env_var('DBT_SCHEMA') }}"     
+      
+      # Authentication (adapter-specific)
+      auth_method:            kaypair  
+      private_key_path:       "{{ env_var('DBT_ENV_SECRET_PRIVATE_KEY_PATH') }}"
+      private_key_passphrase: "{{ env_var('DBT_ENV_SECRET_PRIVATE_KEY_PASSPHRASE') }}"
+      
+      # Execution settings (common across adapters)
+      threads: 10   # Number of parallel threads

@@ -9,8 +9,8 @@ default:
       user:     "{{ env_var('DBT_ENV_SECRET_USER') }}"
       
       database: "{{ env_var('DBT_DATABASE') }}"
-      schema:   "{{ env_var('DBT_SCHEMA') }}"     
-      
+      schema:   "{{ env_var('DBT_TGT_SCHEMA') }}"     
+
       # Authentication (adapter-specific)
       auth_method:            kaypair  
       private_key_path:       "{{ env_var('DBT_ENV_SECRET_PRIVATE_KEY_PATH') }}"
